@@ -52,9 +52,11 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rsync autojump emacs zshreload)
+plugins=(git rsync autojump emacs zshreload zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
 # User configuration
 
@@ -89,6 +91,8 @@ alias gsvnd="git svn dcommit"
 # proxy list
 # alias proxy='export all_proxy=socks5://127.0.0.1:1086'
 # alias unproxy='unset all_proxy'
+eval `ssh-agent` 
+ssh-add
 
 export GPG_TTY=$(tty) 
 export GOPATH=$HOME/GoWorks/
@@ -107,3 +111,4 @@ export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/t
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
+export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
