@@ -85,7 +85,7 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gsvnr="git svn rebase"
 alias gsvnd="git svn dcommit"
 alias python="python3"
-
+alias pip="pip3"
 # proxy list
 alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 alias unproxy='unset all_proxy'
