@@ -1,17 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-fortune -e 25% chinese 25% fortunes 25% tang300  25% song100 | cowsay -f www
+fortune | cowsay -f www
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes!
 ZSH_THEME="ys"
-
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -52,7 +48,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rsync autojump emacs zshreload zsh-autosuggestions)
+plugins=(git rsync autojump  zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -76,7 +72,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
- export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,31 +80,42 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-#alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gsvnr="git svn rebase"
 alias gsvnd="git svn dcommit"
-# proxy list
-# alias proxy='export all_proxy=socks5://127.0.0.1:1086'
-# alias unproxy='unset all_proxy'
-eval `ssh-agent` 
-ssh-add
+alias python="python3"
 
-export GPG_TTY=$(tty) 
+# proxy list
+alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+alias unproxy='unset all_proxy'
+#eval `ssh-agent` 
+#ssh-add
+
+#export GPG_TTY=$(tty) 
 export GOPATH=$HOME/GoWorks/
 export GOBIN=$GOPATH/bin/
-
-#export GOROOT=$HOME/GoWorks/ 
+export GOROOT=/usr/local/go/⁨
 export PATH=/Applications/TexturePacker.app/Contents/MacOS/:~/bin:$GOPATH:$GOBIN:$PATH
-export PATH=/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/bin/:$PATH
+export PATH=/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/bin/:$HOME/bin/mongodb/bin:$PATH
 
 export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/ndk-bundle:$PATH
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# export PATH=/usr/local/bin:~/bin:/Applications/MacVim/Contents/bin:$PATH
-
+export PATH=$HOME/.local/bin:$PATH
+ export NVM_DIR="$HOME/.nvm"
+ [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+ [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=/usr/local/bin:~/bin:/Applications/MacVim/Contents/bin:$PATH
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-
 export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+
+export MONGO_URI=mongodb://localhost:27017/game
+#in ZSH, add to ~/.zprofile
+export NDK_ROOT=$HOME/Library/Android/sdk/ndk/16.1.4479499/
+export PATH=$HOME/bin:/usr/local/bin:~/bin:$PATH:$NDK_ROOT
+export ANDROID_SDK_ROOT=/Users/yuanfei/Library/Android/sdk/
+
+export GPG_TTY=$(tty)
+export LANG=en
+ # export LANG="en gpg"
+eval "$(pyenv init -)"
+eval "$(starship init zsh)"
