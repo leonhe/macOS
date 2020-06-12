@@ -95,10 +95,9 @@ alias unproxy='unset all_proxy'
 #export GPG_TTY=$(tty) 
 export GOPATH=$HOME/GoWorks/
 export GOBIN=$GOPATH/bin/
-export GOROOT=/usr/local/go/⁨
 export PATH=/Applications/TexturePacker.app/Contents/MacOS/:~/bin:$GOPATH:$GOBIN:$PATH
 export PATH=/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/bin/:$HOME/bin/mongodb/bin:$PATH
-
+export GOROOT=/usr/local/Cellar/go/1.14.1/libexec/
 export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/ndk-bundle:$PATH
 export PATH=$HOME/.local/bin:$PATH
  export NVM_DIR="$HOME/.nvm"
@@ -116,6 +115,7 @@ export ANDROID_SDK_ROOT=/Users/yuanfei/Library/Android/sdk/
 
 export GPG_TTY=$(tty)
 export LANG=en
+export TERM="xterm-256color"
  # export LANG="en gpg"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
